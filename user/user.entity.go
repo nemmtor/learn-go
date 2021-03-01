@@ -1,7 +1,7 @@
-package auth
+package user
 
-// User entity type
-type User struct {
+// Entity for User
+type Entity struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
 }

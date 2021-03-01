@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-var databaseObject = &Data
+var databaseObject = &Store
 
 func init() {
 	log.Println("Opening db file...")
