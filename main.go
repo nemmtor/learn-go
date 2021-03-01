@@ -1,7 +1,7 @@
 package main
 
-import "learn-go/auth"
+import "learn-go/database"
 
 func main() {
-	auth.Login()
+	database.Connect("db.json")
 }
