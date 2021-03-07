@@ -8,11 +8,10 @@ import (
 
 func main() {
 	database.Connect("db.json")
-	log.Println(database.Store)
-
 	// Fake register
-	newUser := user.Entity{Username: "Kacper", Password: "123"}
+	newUser := database.User{Username: "Kacper", Password: "123"}
 
 	userRepository := user.Repository{}
 	userRepository.CreateUser(newUser)
+	log.Println(database.Store)
 }

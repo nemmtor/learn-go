@@ -27,6 +27,13 @@ func Connect(filename string) {
 	log.Println("Connected to database file.")
 }
 
+func saveJSON(jsonData []byte) {
+	error := ioutil.WriteFile("db.json", jsonData, 0644)
+	if error != nil {
+		log.Fatal(error)
+	}
+}
+
 func getJSONData(filename string) []byte {
 	jsonFile, fileOpenError := os.Open(filename)
 	if fileOpenError != nil {
