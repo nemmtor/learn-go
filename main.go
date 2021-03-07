@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	database.Connect("db.json")
+	database.TryToConnect()
 	// Fake register
 	newUser := database.User{Username: "Kacper", Password: "123"}
 

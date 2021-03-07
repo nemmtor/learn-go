@@ -2,6 +2,7 @@ package database
 
 import (
 	"encoding/json"
+	"learn-go/jsonio"
 	"log"
 )
 
@@ -13,5 +14,5 @@ func (store database) Save() {
 	if jsonDataError != nil {
 		log.Fatal("Could'nt convert store to json.")
 	}
-	saveJSON(jsonData)
+	jsonio.SaveJSON(jsonData, dbFilename)
 }
