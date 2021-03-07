@@ -8,10 +8,15 @@ import (
 
 func main() {
 	database.TryToConnect()
-	// Fake register
-	newUser := database.User{Username: "Kacper", Password: "123"}
 
+	newUser := database.User{Username: "Kacper", Password: "123"}
 	userRepository := user.Repository{}
-	userRepository.CreateUser(newUser)
-	log.Println(database.Store)
+	userRepository.Create(newUser)
+
+	foundUser, error := userRepository.GetByUsername("Michał")
+	if error != nil {
+		log.Println(error)
+	} else {
+		log.Printf("Found user with username: %v\n", foundUser.Username)
+	}
 }
